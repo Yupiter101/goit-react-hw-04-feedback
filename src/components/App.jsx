@@ -1,4 +1,3 @@
-// npm install prop-types
 import React from "react";
 import Statistics from "./Statistics/Statistics";
 import Notification from "./Notification/Notification";
