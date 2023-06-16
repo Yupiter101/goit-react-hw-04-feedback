@@ -4,18 +4,21 @@ import css from './FeedbackOptions.module.css';
 
 
 
-function FeedbackOptions({ options, onLeaveFeedback }) {
+  function FeedbackOptions({ options, onLeaveFeedback }) {
+
+    function transName(nam) {
+      return nam.charAt(0).toUpperCase() + nam.slice(1)
+    }
 
     return (
       <div className={css.FidbackList}>
-        {options.map(option => <button 
+        {options.map((option, idx) => <button 
             className={css.FidbackBtn}
             key={option} 
-            onClick={()=> onLeaveFeedback(option)}
-          >{option.charAt(0).toUpperCase() + option.slice(1)}</button>)}
+            onClick={()=> onLeaveFeedback(idx)}
+          >{transName(option)}</button>)}
       </div>
-    )
-  
+  )
 }
 
 export default FeedbackOptions;
